@@ -24,4 +24,10 @@ angular.module('socialBubblesApp')
 		{dateText: '8-Apr-12', close: 50},
 		{dateText: '9-Apr-12', close: 77}
   	];
+
+  	$scope.d3OnClick = function(point) {
+  		$scope.$apply(function() {
+  			$scope.selectedPoint = point;
+  		});
+  	};
   });

@@ -11,7 +11,8 @@ angular.module('socialBubblesApp')
     return {
       restrict: 'EA',
       scope: {
-        data: '=' //bi-directional data-binding
+        data: '=', //bi-directional data-binding
+        onClick: '&'
       },
       link: function(scope, element, attrs) {
         d3Service.d3().then(function(d3) {
@@ -90,7 +91,10 @@ angular.module('socialBubblesApp')
             svg.append('path')
               .datum(scope.data)
               .attr('class', 'line')
-              .attr('d', line);
+              .attr('d', line)
+              .on('click', function(d) {
+                return scope.onClick({point: d});
+              });
           };
 
         });

@@ -2,4 +2,6 @@
 <form ng-submit="addDate()">
 	<input type="text" ng-model="newDate" placeholder="10-Apr-12,65" style="width: 50%;"><input class="btn" type="submit" valuw="add">
 </form>
-<simple-line-chart data="d3Data"></simple-line-chart>
+<p>Selected Point: {{selectedPoint}}</p>
+<simple-line-chart data="d3Data" on-click="d3OnClick(point)"></simple-line-chart>
+<!-- <directive-name directive-scope-attrib=controller-$scope-attrib></directive-name> -->
